@@ -10,4 +10,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="item_selected" from="." to="." method="_on_Weapons_item_selected"]
+[node name="RayCast2D" type="RayCast2D" parent="."]
