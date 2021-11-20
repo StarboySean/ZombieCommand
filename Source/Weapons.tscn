@@ -5,6 +5,7 @@
 [node name="Weapons" type="ItemList"]
 margin_right = 60.0
 margin_bottom = 600.0
+mouse_default_cursor_shape = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

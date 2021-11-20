@@ -9,6 +9,8 @@ enum Weapon{
 	GRENADE	
 }
 func fire(at: Vector2):
+	if at.x <= rect_size.x:
+		return
 	var parent = get_parent()
 	var items := get_selected_items()
 	if not items:

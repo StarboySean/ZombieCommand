@@ -16,3 +16,13 @@ func _process(delta):
 
 func _on_AnimatedSprite_frame_changed():
 	move_and_collide(Vector2.DOWN * speed)
+func die():
+	var tween = get_node("Tween")
+	tween.interpolate_property(self, "rotation_degrees",
+		0, 90, 0.3,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+
+
+func _on_Tween_tween_completed(object, key):
+	queue_free()

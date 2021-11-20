@@ -14,5 +14,5 @@ func _on_Weapons_rifle(at):
 	$Rifle.force_raycast_update()
 	if $Rifle.is_colliding():
 		var collider = $Rifle.get_collider()
-		collider.queue_free()
+		collider.die()
 	$Rifle/AudioStreamPlayer.play()
