@@ -5,12 +5,15 @@ var rng = RandomNumberGenerator.new()
 var offset := 0.0
 var alive := true
 
+signal win
+
 func _ready():
 	rng.randomize()
 	var viewport_rect := get_viewport_rect()
 	var radius :float= $CollisionShape2D.shape.radius 
 	position.x = rng.randf_range(radius + offset, viewport_rect.size.x - radius)
 	position.y = radius
+	speed = rng.randf_range(1, 10)
 	
 func _process(delta):
 	z_index = position.y
@@ -42,4 +45,5 @@ func _on_Tween_tween_completed(object, key):
 
 
 func _on_VisibilityNotifier2D_screen_exited():
+	emit_signal("win")
 	queue_free()

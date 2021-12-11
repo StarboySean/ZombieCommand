@@ -20,5 +20,14 @@ script = ExtResource( 4 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Rifle"]
 stream = ExtResource( 3 )
 
+[node name="Lives" type="Label" parent="."]
+margin_left = 2.11894
+margin_top = 575.289
+margin_right = 42.1189
+margin_bottom = 589.289
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="Spawner" to="." method="_on_Spawner_timeout"]
 [connection signal="rifle" from="Weapons" to="." method="_on_Weapons_rifle"]
