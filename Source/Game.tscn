@@ -20,11 +20,23 @@ script = ExtResource( 4 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Rifle"]
 stream = ExtResource( 3 )
 
-[node name="Lives" type="Label" parent="."]
-margin_left = 2.11894
+[node name="SurvivorCount" type="Label" parent="."]
+margin_left = 12.7136
 margin_top = 575.289
-margin_right = 42.1189
+margin_right = 52.7135
 margin_bottom = 589.289
+text = "10"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Survivors" type="Label" parent="."]
+margin_left = 2.11893
+margin_top = 556.218
+margin_right = 60.1189
+margin_bottom = 570.218
+text = "Survivors"
 __meta__ = {
 "_edit_use_anchors_": false
 }

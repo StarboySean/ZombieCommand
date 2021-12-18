@@ -45,5 +45,6 @@ func _on_Tween_tween_completed(object, key):
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	emit_signal("win")
+	if alive:
+		emit_signal("win")
 	queue_free()
