@@ -18,6 +18,8 @@ func _ready():
 			sprite.position = position
 			position.x += Grass.get_size().x
 			add_child(sprite)
+		position.x = 0.0
+		position.y += Grass.get_size().y
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

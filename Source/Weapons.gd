@@ -1,6 +1,7 @@
 extends ItemList
 signal rifle(at)
 signal grenade(at)
+var disabled := false
 
 const Explosion := preload("res://Source/Explosion.tscn")
 enum Weapon{
@@ -9,6 +10,8 @@ enum Weapon{
 	GRENADE	
 }
 func fire(at: Vector2):
+	if disabled:
+		return
 	if at.x <= rect_size.x:
 		return
 	var parent = get_parent()
