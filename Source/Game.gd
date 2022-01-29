@@ -1,12 +1,13 @@
 extends Node2D
 
-var waves := [{"zombie0" : 5, "rifle" : 90, "grenade" : 10}, {"zombie0" : 10, "rifle" : 90, "grenade" : 10}]
-var wave := 0
+
 var started := false
 onready var zombies := 0
 onready var zombiesSpawn := 0
 onready var zombiesKilled := 0
 
+var waves := [{"zombie0" : 5, "rifle" : 90, "grenade" : 10}, {"zombie0" : 10, "rifle" : 90, "grenade" : 10}]
+var wave := 0
 
 export var starting_lives := 10
 var Zombie0 = preload("res://Source/Zombie-0.tscn")
@@ -39,6 +40,7 @@ func _on_Weapons_rifle(at):
 func _on_zombie_win():
 	var lives := int($SurvivorCount.text)
 	lives -= 1
+	zombiesKilled += 1
 	$SurvivorCount.text = str(lives)
 	if not lives:
 		get_tree().change_scene("res://Source/GameOver.tscn")
